@@ -53,9 +53,9 @@ class LinkedList
         finalized.lstrip
     end
 
-    def includes(string)
-        @array.each do |element|
-            if element == string
+    def includes?(string)
+        @array.each do |node|
+            if node.data == string
                 return true
             end
         end

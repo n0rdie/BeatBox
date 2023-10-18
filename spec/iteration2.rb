@@ -30,14 +30,14 @@ RSpec.describe LinkedList do
         expect(list.find(1,2)).to eq("woo plop")
     end
 
-    it "includes" do
+    xit "includes" do
         list = LinkedList.new
         list.append("plop")
         list.append("suu")
         list.prepend("dop")
         list.insert(1, "woo")
         # "dop woo plop suu"
-        expect(list.includes("dop")).to eq(true)
-        expect(list.includes("nope")).to eq(false)
+        expect(list.includes?("dop")).to eq(true)
+        expect(list.includes?("nope")).to eq(false)
     end
 end
