@@ -1,15 +1,22 @@
 'Part 1'''''''''''''''''''''''''''''''''''''''''''''''''
 require "./lib/node"
+require "pry"
 #=> true
 
-node = Node.new("plop")
-#=> #<Node:0x007fbda8a88348 @data="plop", @next_node=nil>
+RSpec.describe Node do
+    it "has data" do
+        node = Node.new("plop")
+        expect(node.data).to eq("plop")
+        #=> "plop".
+    end
 
-node.data
-#=> "plop".
+    it "has next node"do
+        node = Node.new("plop")
+        expect(node.next_node).to eq(nil)
+        #=> nil
+    end
+end
 
-node.next_node
-#=> nil
 
 
 'Part 2''''''''''''''''''''''''''''''''''''''''''''''''''
