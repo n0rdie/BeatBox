@@ -1,31 +1,20 @@
-pry(main)> require "./lib/linked_list"
-#=> true
+require "./lib/linked_list"
+require "./lib/node"
 
-pry(main)> require "./lib/node"
-#=> true
+RSpec.describe LinkedList do
+    it "prepend" do
+        list = LinkedList.new
+        list.append("plop")
+        list.append("suu")
+        list.prepend("dop")
+        expect(list.to_string).to eq("dop plop suu")
+    end
+end
 
-pry(main)> list = LinkedList.new
-#=> #<LinkedList:0x000000010d670c88 @head=nil>
-
-pry(main)> list.append("plop")
-
-pry(main)> list.to_string
-#=> "plop"
-
-pry(main)> list.append("suu")
-
-pry(main)> list.to_string
-# "plop suu"
-
-pry(main)> list.prepend("dop")
-
-pry(main)> list.to_string
-#=> "dop plop suu"
-
-pry(main)> list.count
+#list.count
 #=> 3
 
-pry(main)> list.insert(1, "woo")
+#list.insert(1, "woo")
 
-pry(main)> list.to_string
+#list.to_string
 #=> "dop woo plop suu"
