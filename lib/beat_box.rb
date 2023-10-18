@@ -17,4 +17,8 @@ class BeatBox
             list.append(short_str)
         end
     end
+
+    def play
+        "plays the sounds " + list.to_string
+    end
 end
