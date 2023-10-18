@@ -40,4 +40,16 @@ RSpec.describe LinkedList do
         expect(list.includes?("dop")).to eq(true)
         expect(list.includes?("nope")).to eq(false)
     end
+
+    xit "pop" do
+        list = LinkedList.new
+        list.append("plop")
+        list.append("suu")
+        list.prepend("dop")
+        list.insert(1, "woo")
+        # "dop woo plop suu"
+        list.pop
+        list.pop
+        expect(list.to_string).to eq("dop woo")
+    end
 end
