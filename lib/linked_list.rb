@@ -30,4 +30,10 @@ class LinkedList
         end
         string.lstrip
     end
+
+    def prepend(data_input)
+        new_node = Node.new(data_input)
+        new_node.set_next_node(@array[0])
+        @array.unshift(new_node)
+    end
 end
