@@ -52,4 +52,13 @@ class LinkedList
         binding.pry
         finalized.lstrip
     end
+
+    def includes(string)
+        @array.each do |element|
+            if element == string
+                return true
+            end
+        end
+        false
+    end
 end
