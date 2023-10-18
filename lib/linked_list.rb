@@ -13,6 +13,9 @@ class LinkedList
 
     def append(data_input)
         new_node = Node.new(data_input)
+        if count > 0
+            @array[count-1].set_next_node(new_node)
+        end
         @array.append new_node
     end
 
