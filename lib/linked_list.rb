@@ -43,4 +43,13 @@ class LinkedList
         @array[index-1].set_next_node(@array[index])
         @array[index].set_next_node(@array[index+1])
     end
+
+    def find(index, count)
+        finalized = ""
+        for x in 1..count do
+            finalized = finalized + " " + @array[(index + x)].data
+        end
+        binding.pry
+        finalized.lstrip
+    end
 end

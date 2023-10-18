@@ -27,6 +27,6 @@ RSpec.describe LinkedList do
         list.prepend("dop")
         list.insert(1, "woo")
         # "dop woo plop suu"
-        expect(list.find(1,2)).to eq("suu dop")
+        expect(list.find(1,2)).to eq("woo plop")
     end
 end
