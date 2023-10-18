@@ -61,4 +61,8 @@ class LinkedList
         end
         false
     end
+
+    def pop
+        @array.pop
+    end
 end
