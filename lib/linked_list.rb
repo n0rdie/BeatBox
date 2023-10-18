@@ -16,7 +16,7 @@ class LinkedList
         if count > 0
             @array[count-1].set_next_node(new_node)
         end
-        @array.append new_node
+        @array.append(new_node)
     end
 
     def count

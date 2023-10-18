@@ -35,7 +35,7 @@ RSpec.describe LinkedList do
         expect(list.head.data).to eq("doop")
     end
     
-    xit "next_node empty" do
+    it "next_node empty" do
         list = LinkedList.new
         list.append("doop")
         expect(list.head.next_node).to eq(nil)
@@ -55,36 +55,14 @@ RSpec.describe LinkedList do
     end
 end
 
-'Part 3''''''''''''''''''''''''''''''''''''''''''''''''''
-list = LinkedList.new
-#=> #<LinkedList:0x000000010d670c88 @head=nil>
-
-list.head
-#=> nil
-
-list.append("doop")
-#=> "doop"
-
-list
-#=> #<LinkedList:0x0000000110e383a0 @head=#<Node:0x0000000110e382d8 @data="doop", @next_node=nil>>
-
-list.head
-#=> #<Node:0x0000000110e382d8 @data="doop", @next_node=nil>
-
-list.head.next_node
-#=> nil
-
-list.append("deep")
-
-list
-#=> #<LinkedList:0x00000001116213a0 @head=#<Node:0x00000001116212b0 @data="doop" @next_node=#<Node:0x00000001116210f8 @data="deep", @next_node=nil>>>
-
-list.head.next_node
-#=> #<Node:0x00000001116210f8 @data="deep", @next_node=nil>
-
-list.count
-#=> 2
-
-list.to_string
-#=> "doop deep"
-'''
+'Part 3'''''''''''''''''''''''''''''''''''''''''''''''''
+RSpec.describe LinkedList do
+    it "multi-node data" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("deep")
+        expect(list.head.next_node.data).to eq("deep")
+        expect(list.count).to eq(2)
+        expect(list.to_string).to eq("doop deep")
+    end
+end
