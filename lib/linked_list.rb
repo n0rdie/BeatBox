@@ -30,4 +30,39 @@ class LinkedList
         end
         string.lstrip
     end
+
+    def prepend(data_input)
+        new_node = Node.new(data_input)
+        new_node.set_next_node(@array[0])
+        @array.unshift(new_node)
+    end
+
+    def insert(index, data_input)
+        new_node = Node.new(data_input)
+        @array.insert(index, new_node)
+        @array[index-1].set_next_node(@array[index])
+        @array[index].set_next_node(@array[index+1])
+    end
+
+    def find(index, count)
+        finalized = ""
+        for x in 1..count do
+            finalized = finalized + " " + @array[(index + x)].data
+        end
+        binding.pry
+        finalized.lstrip
+    end
+
+    def includes?(string)
+        @array.each do |node|
+            if node.data == string
+                return true
+            end
+        end
+        false
+    end
+
+    def pop
+        @array.pop
+    end
 end
