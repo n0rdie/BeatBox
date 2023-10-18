@@ -36,4 +36,11 @@ class LinkedList
         new_node.set_next_node(@array[0])
         @array.unshift(new_node)
     end
+
+    def insert(index, data_input)
+        new_node = Node.new(data_input)
+        @array.insert(index, new_node)
+        @array[index-1].set_next_node(@array[index])
+        @array[index].set_next_node(@array[index+1])
+    end
 end
