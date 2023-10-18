@@ -1,75 +1,68 @@
 'Part 1'''''''''''''''''''''''''''''''''''''''''''''''''
 require "./lib/node"
+require "pry"
 #=> true
 
-node = Node.new("plop")
-#=> #<Node:0x007fbda8a88348 @data="plop", @next_node=nil>
+RSpec.describe Node do
+    xit "has data" do
+        node = Node.new("plop")
+        expect(node.data).to eq("plop")
+        #=> "plop".
+    end
 
-node.data
-#=> "plop"
+    xit "has next node"do
+        node = Node.new("plop")
+        expect(node.next_node).to eq(nil)
+        #=> nil
+    end
+end
 
-node.next_node
-#=> nil
 
 
-'Part 2''''''''''''''''''''''''''''''''''''''''''''''''''
+'Part 2'''''''''''''''''''''''''''''''''''''''''''''''''
 require "./lib/linked_list"
 #=> true
 
-list = LinkedList.new
-#=> #<LinkedList:0x000000010d670c88 @head=nil>
+RSpec.describe LinkedList do
+    xit "can initalize" do
+        list = LinkedList.new
+        expect(list.head).to eq(nil)
+    end
 
-list.head
-#=> nil
+    xit "can add data" do
+        list = LinkedList.new
+        list.append("doop")
+        expect(list.head.data).to eq("doop")
+    end
+    
+    it "next_node empty" do
+        list = LinkedList.new
+        list.append("doop")
+        expect(list.head.next_node).to eq(nil)
+    end
+   
 
-list.append("doop")
+    xit "list count" do
+        list = LinkedList.new
+        list.append("doop")
+        expect(list.count).to eq(1)
+    end
 
-list
-#=> #<LinkedList:0x0000000110e383a0 @head=#<Node:0x0000000110e382d8 @data="doop", @next_node=nil>>
+    xit "list to string" do
+        list = LinkedList.new
+        list.append("doop")
+        expect(list.to_string).to eq("doop")
+    end
+end
 
-list.head.data
-#=> "doop"
-
-list.head.next_node
-#=> nil
-
-list.count
-#=> 1
-
-list.to_string
-#=> "doop"
-'''
-
-'''
-list = LinkedList.new
-#=> #<LinkedList:0x000000010d670c88 @head=nil>
-
-list.head
-#=> nil
-
-list.append("doop")
-#=> "doop"
-
-list
-#=> #<LinkedList:0x0000000110e383a0 @head=#<Node:0x0000000110e382d8 @data="doop", @next_node=nil>>
-
-list.head
-#=> #<Node:0x0000000110e382d8 @data="doop", @next_node=nil>
-
-list.head.next_node
-#=> nil
-
-list.append("deep")
-
-list
-#=> #<LinkedList:0x00000001116213a0 @head=#<Node:0x00000001116212b0 @data="doop" @next_node=#<Node:0x00000001116210f8 @data="deep", @next_node=nil>>>
-
-list.head.next_node
-#=> #<Node:0x00000001116210f8 @data="deep", @next_node=nil>
-
-list.count
-#=> 2
-
-list.to_string
-#=> "doop deep"
-'''
+'Part 3'''''''''''''''''''''''''''''''''''''''''''''''''
+RSpec.describe LinkedList do
+    it "multi-node data" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("deep")
+        expect(list.head.next_node.data).to eq("deep")
+        expect(list.count).to eq(2)
+        expect(list.to_string).to eq("doop deep")
+    end
+end
