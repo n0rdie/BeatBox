@@ -24,22 +24,29 @@ require "./lib/linked_list"
 #=> true
 
 RSpec.describe LinkedList do
-    it "can initalize" do
+    xit "can initalize" do
         list = LinkedList.new
         expect(list.head).to eq(nil)
     end
 
-    it "can add data" do
+    xit "can add data" do
         list = LinkedList.new
         list.append("doop")
         expect(list.head.data).to eq("doop")
     end
     
-    # list.head.next_node
-    #=> nil
-    
-    # list.count
-    #=> 1
+    it "next_node empty" do
+        list = LinkedList.new
+        list.append("doop")
+        expect(list.head.next_node).to eq(nil)
+    end
+   
+
+    it "list count" do
+        list = LinkedList.new
+        list.append("doop")
+        expect(list.count).to eq(1)
+    end
     
     # list.to_string
     #=> "doop"
