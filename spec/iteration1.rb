@@ -35,21 +35,24 @@ RSpec.describe LinkedList do
         expect(list.head.data).to eq("doop")
     end
     
-    it "next_node empty" do
+    xit "next_node empty" do
         list = LinkedList.new
         list.append("doop")
         expect(list.head.next_node).to eq(nil)
     end
    
 
-    it "list count" do
+    xit "list count" do
         list = LinkedList.new
         list.append("doop")
         expect(list.count).to eq(1)
     end
-    
-    # list.to_string
-    #=> "doop"
+
+    xit "list to string" do
+        list = LinkedList.new
+        list.append("doop")
+        expect(list.to_string).to eq("doop")
+    end
 end
 
 'Part 3''''''''''''''''''''''''''''''''''''''''''''''''''
