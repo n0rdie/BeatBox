@@ -6,7 +6,7 @@ node = Node.new("plop")
 #=> #<Node:0x007fbda8a88348 @data="plop", @next_node=nil>
 
 node.data
-#=> "plop"
+#=> "plop".
 
 node.next_node
 #=> nil
