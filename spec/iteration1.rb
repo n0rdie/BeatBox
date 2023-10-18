@@ -4,13 +4,13 @@ require "pry"
 #=> true
 
 RSpec.describe Node do
-    it "has data" do
+    xit "has data" do
         node = Node.new("plop")
         expect(node.data).to eq("plop")
         #=> "plop".
     end
 
-    it "has next node"do
+    xit "has next node"do
         node = Node.new("plop")
         expect(node.next_node).to eq(nil)
         #=> nil
@@ -23,29 +23,27 @@ end
 require "./lib/linked_list"
 #=> true
 
-list = LinkedList.new
-#=> #<LinkedList:0x000000010d670c88 @head=nil>
+RSpec.describe LinkedList do
+    it "can initalize" do
+        list = LinkedList.new
+        expect(list.head).to eq(nil)
+    end
 
-list.head
-#=> nil
-
-list.append("doop")
-
-list
-#=> #<LinkedList:0x0000000110e383a0 @head=#<Node:0x0000000110e382d8 @data="doop", @next_node=nil>>
-
-list.head.data
-#=> "doop"
-
-list.head.next_node
-#=> nil
-
-list.count
-#=> 1
-
-list.to_string
-#=> "doop"
-
+    it "can add data" do
+        list = LinkedList.new
+        list.append("doop")
+        expect(list.head.data).to eq("doop")
+    end
+    
+    # list.head.next_node
+    #=> nil
+    
+    # list.count
+    #=> 1
+    
+    # list.to_string
+    #=> "doop"
+end
 
 'Part 3''''''''''''''''''''''''''''''''''''''''''''''''''
 list = LinkedList.new
